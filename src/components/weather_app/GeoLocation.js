@@ -3,7 +3,7 @@ import DisplayLocation from './DisplayLocation'
 
 import { LOCATION_SOURCES } from './utils'
 
-const API_KEY = '1012f9575c9243dfb3bf2e47af182a28'
+
 
 const GeoLocation = ({ onLocationUpdate }) => {
   const [location, setLocation] = useState(null)
