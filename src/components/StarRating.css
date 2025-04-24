@@ -1,0 +1,24 @@
+.star-rating {
+    display: inline-flex;
+    align-items: center;
+}
+
+.star {
+    font-size: 1.5rem;
+    margin-right: 2px;
+}
+
+.half-star {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 0.75em;
+    /* Half of the star width */
+}
+
+.half-star::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    width: 100%;
+}

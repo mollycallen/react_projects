@@ -1,0 +1,54 @@
+/* HourlyForecast.css */
+
+.hourly-forecast-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Default styles for large screens */
+.hourly-forecast-container .date-large {
+    display: inline;
+}
+
+.hourly-forecast-container .date-medium,
+.hourly-forecast-container .date-small {
+    display: none;
+}
+
+/* Styles for medium screens */
+@media (max-width: 992px) {
+    .hourly-forecast-container .date-large {
+        display: none;
+    }
+
+    .hourly-forecast-container .date-medium {
+        display: inline;
+    }
+
+    .hourly-forecast-container .date-small {
+        display: none;
+    }
+}
+
+/* Styles for small screens */
+@media (max-width: 576px) {
+
+    .hourly-forecast-container .date-large,
+    .hourly-forecast-container .date-medium {
+        display: none;
+    }
+
+    .hourly-forecast-container .date-small {
+        display: inline;
+    }
+
+    .hourly-forecast-container .weather-icon {
+        display: none;
+    }
+
+    .hourly-forecast-container table td,
+    .hourly-forecast-container table th {
+        padding: 0.5rem 0.25rem;
+    }
+}

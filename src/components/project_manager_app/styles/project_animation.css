@@ -1,0 +1,73 @@
+/* Fade out */
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}
+
+/* Slide down */
+.slide-down-exit {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slide-down-exit-active {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms ease-in;
+}
+
+/* Scale down */
+.scale-down-exit {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.scale-down-exit-active {
+    transform: scale(0.5);
+    opacity: 0;
+    transition: opacity 800ms, transform 300ms ease-in;
+}
+
+/* Rotate and fade */
+.rotate-fade-exit {
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+.rotate-fade-exit-active {
+    transform: rotate(90deg);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms ease-in;
+}
+
+
+/* Collapse vertically */
+.collapse-exit {
+    max-height: 100%;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.collapse-exit-active {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.project-exit {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.project-exit-active {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: all 300ms;
+}

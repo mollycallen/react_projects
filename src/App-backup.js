@@ -39,7 +39,7 @@ function App() {
       className={`${themeContextValue.bgColor} ${themeContextValue.textColor} d-flex flex-column align-items-center justify-content-center p-4`}
     >
       <ThemeContext.Provider value={themeContextValue}>
-        <h1 className="mb-4">Utilities</h1>
+        {/*         <h1 className="mb-4">Utilities</h1>
         <Form className="mb-4">
           <Form.Check
             type="switch"
@@ -49,10 +49,7 @@ function App() {
             onChange={toggleDarkMode}
           />
         </Form>
-        <div className="p-3">
-          <StarRating rating={3.5} />
-        </div>
-        <div className="d-flex flex-row flex-wrap gap-3">
+        <div className="d-flex flex-column gap-3">
           <ModalComponent title="Calculator" BodyComponent={Calculator} />
           <ModalComponent title="Stopwatch" BodyComponent={Stopwatch} />
           <ModalComponent title="Timer" BodyComponent={Timer} />
@@ -69,16 +66,13 @@ function App() {
           <ModalComponent title="CSV Analyzer" BodyComponent={CSVAnalyzer} />
 
           <ModalComponent title="Sudoku" BodyComponent={Board} />
-          <ModalComponent title="Running Data" BodyComponent={RunningDataApp} />
-          <ModalComponent
-            title="Find Shows & Movies"
-            BodyComponent={MediaList}
-          />
-          <ModalComponent
-            title="Paypal Transaction Viewer"
-            BodyComponent={PaypalTransactionViewer}
-          />
         </div>
+        <div className="p-3 m-3">
+          <StarRating rating={3.5} />
+        </div>
+        <MediaList />
+        <RunningDataApp /> */}
+        <PaypalTransactionViewer />
       </ThemeContext.Provider>
     </div>
   );

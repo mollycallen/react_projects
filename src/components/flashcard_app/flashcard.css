@@ -1,0 +1,13 @@
+.flashcard {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.flashcard.animate {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.flashcard:not(.animate) {
+    opacity: 1;
+    transform: translateY(0);
+}

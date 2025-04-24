@@ -1,0 +1,272 @@
+[
+  {
+    "name": "product_category_list",
+    "description": "retrieves amazon product categories per country",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Sets the Amazon domain, marketplace country, language and currency. Allowed values: US, AU, BR, CA, CN, FR, DE, IN, IT, MX, NL, SG, ES, TR, AE, GB, JP, SA, PL, SE, BE, EG",
+          "default": "US"
+        }
+      },
+      "required": [],
+      "optional": [
+        "country"
+      ]
+    }
+  },
+  {
+    "name": "product_search",
+    "description": "search for products and offers on Amazon",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Search query (supports both free-form text queries or a product asin).",
+          "default": null
+        },
+        "page": {
+          "type": "number",
+          "description": "Results page to return",
+          "default": 1
+        },
+        "country": {
+          "type": "string",
+          "description": "Sets the Amazon domain, marketplace country, language and currency. Allowed values: US, AU, BR, CA, CN, FR, DE, IN, IT, MX, NL, SG, ES, TR, AE, GB, JP, SA, PL, SE, BE, EG",
+          "default": "US"
+        },
+        "sort_by": {
+          "type": "string",
+          "description": "Valid values: RELEVANCE, LOWEST_PRICE, HIGHEST_PRICE, REVIEWS, NEWEST, BEST_SELLERS",
+          "default": "RELEVANCE"
+        },
+        "category_id": {
+          "type": "string",
+          "description": "Find products in a specific category / department. Use the Product Category List endpoint to get a list of valid categories and their ids for the country specified in the request.",
+          "default": "aps (All Departments)"
+        },
+        "min_price": {
+          "type": "number",
+          "description": "Only return product offers with price greater than a certain value",
+          "default": null
+        },
+        "max_price": {
+          "type": "number",
+          "description": "Only return product offers with price lower than a certain value",
+          "default": null
+        },
+        "product_condition": {
+          "type": "string",
+          "description": "Return products in a specific condition. Allowed values: ALL, NEW, USED, RENEWED, COLLECTIBLE",
+          "default": "ALL"
+        },
+        "brand": {
+          "type": "string",
+          "description": "Find products with a specific brand. Multiple brands can be specified as a comma (,) separated list.",
+          "default": null
+        },
+        "deals_and_discounts": {
+          "type": "string",
+          "description": "Return deals and discounts in a specific condition. Allowed values: NONE, ALL_DISCOUNTS, TODAYS_DEALS",
+          "default": "NONE"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "optional": [
+        "page",
+        "country",
+        "sort_by",
+        "category_id",
+        "min_price",
+        "max_price",
+        "product_condition",
+        "brand",
+        "deals_and_discounts"
+      ]
+    }
+  },
+  {
+    "name": "product_details",
+    "description": "get extensive Amazon product details and information on Amazon product page by asin",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "asin": {
+          "type": "string",
+          "description": "Product ASIN for which to get details. Supports batching of up to 10 ASINs in a single request, separated by comma.",
+          "default": null
+        },
+        "country": {
+          "type": "string",
+          "description": "Sets the Amazon domain, marketplace country, language and currency. Allowed values: US, AU, BR, CA, CN, FR, DE, IN, IT, MX, NL, SG, ES, TR, AE, GB, JP, SA, PL, SE, BE, EG",
+          "default": "US"
+        }
+      },
+      "required": [
+        "asin"
+      ],
+      "optional": [
+        "country"
+      ]
+    }
+  },
+  {
+    "name": "product_reviews",
+    "description": "get and paginate through product reviews on Amazon",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "asin": {
+          "type": "string",
+          "description": "Product ASIN for which to get reviews.",
+          "default": null
+        },
+        "country": {
+          "type": "string",
+          "description": "Sets the Amazon domain, marketplace country, language and currency. Allowed values: US, AU, BR, CA, CN, FR, DE, IN, IT, MX, NL, SG, ES, TR, AE, GB, JP, SA, PL, SE, BE, EG",
+          "default": "US"
+        },
+        "sort_by": {
+          "type": "string",
+          "description": "Return reviews in a specific sort order. Valid values: TOP_REVIEWS, MOST_RECENT",
+          "default": "TOP_REVIEWS"
+        },
+        "star_rating": {
+          "type": "string",
+          "description": "Only return reviews with a specific star rating. Valid values: ALL, 5_STARS, 4_STARS, 3_STARS, 2_STARS, 1_STARS, POSITIVE, CRITICAL",
+          "default": "ALL"
+        },
+        "query": {
+          "type": "string",
+          "description": "Find reviews matching a search query.",
+          "default": "ALL"
+        },
+        "page": {
+          "type": "number",
+          "description": "Results page to return",
+          "default": 1
+        }
+      },
+      "required": [
+        "asin"
+      ],
+      "optional": [
+        "country",
+        "sort_by",
+        "star_rating",
+        "query",
+        "page"
+      ]
+    }
+  },
+  {
+    "name": "deals",
+    "description": "get Amazon deals",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Sets the Amazon domain, marketplace country, language and currency. Allowed values: US, AU, BR, CA, CN, FR, DE, IN, IT, MX, NL, SG, ES, TR, AE, GB, JP, SA, PL, SE, BE, EG",
+          "default": "US"
+        },
+        "offset": {
+          "type": "number",
+          "description": "Number of results to skip / index to start from (for pagination).",
+          "default": null
+        },
+        "categories": {
+          "type": "string",
+          "description": "Return deals with products in specific category ids. Multiple numeric category ids can be specified as a comma (,) separated list.",
+          "default": null
+        },
+        "min_product_star_rating": {
+          "type": "string",
+          "description": "Return deals with products star rating greater than a specific value. Allowed values: ALL, 1, 2, 3, 4",
+          "default": "ALL"
+        },
+        "price_range": {
+          "type": "string",
+          "description": "Return deals with price within a specific price range. 1 is lowest price range shown on Amazon (e.g. Under $25) while 5 is the highest price range (e.g. $200 & Above). Allowed values: ALL, 1, 2, 3, 4, 5",
+          "default": "ALL"
+        },
+        "discount_range": {
+          "type": "string",
+          "description": "Return deals with discount within a specific discount range. 1 is lowest discount range shown on Amazon (e.g. 10% off or more) while 5 is the highest discount range (e.g. 70% off or more). Allowed values: ALL, 1, 2, 3, 4, 5",
+          "default": "ALL"
+        },
+        "brands": {
+          "type": "string",
+          "description": "Return deals with products by specific brands. Multiple brands can be specified separated by comma (,).",
+          "default": null
+        }
+      },
+      "required": [],
+      "optional": [
+        "country",
+        "offset",
+        "categories",
+        "min_product_star_rating",
+        "price_range",
+        "discount_range",
+        "brands"
+      ]
+    }
+  },
+  {
+    "name": "business_search",
+    "description": "retrieves a list of businesses with given keyword and location",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "query or keyword"
+        },
+        "location": {
+          "type": "string",
+          "description": "city, state, country (e.g., New York, NY, USA)"
+        },
+        "sort_by": {
+          "type": "string",
+          "description": "Allowed values: RECOMMENDED, HIGHEST_RATED, REVIEW_COUNT",
+          "default": "RECOMMENDED"
+        },
+        "price_range": {
+          "type": "string",
+          "description": "Find businesses with specific price ranges: $, $$, $$$, $$$$"
+        }
+      },
+      "required": [
+        "query",
+        "location"
+      ],
+      "optional": [
+        "sort_by",
+        "price_range"
+      ]
+    }
+  },
+  {
+    "name": "get_business_details",
+    "description": "retrieves business details for given business id.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "business_id": {
+          "type": "string",
+          "description": "Yelp business id or alias to fetch details for."
+        }
+      },
+      "required": [
+        "business_id"
+      ],
+      "optional": []
+    }
+  }
+]

@@ -1,0 +1,44 @@
+/* DailyForecast.css */
+.daily-forecast-container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.forecast-row td {
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 575.98px) {
+    .daily-forecast-container table {
+        margin-bottom: 0;
+    }
+
+    .forecast-row td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .weather-cell {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    /* Hide weather icons in the forecast table on mobile */
+    .weather-cell .weather-icon {
+        display: none;
+    }
+
+    .precip-cell {
+        padding-right: 0.75rem !important;
+    }
+}
+
+/* Ensure the table doesn't overflow on very small screens */
+@media (max-width: 320px) {
+    .forecast-row td {
+        padding: 0.4rem;
+        font-size: 0.85rem;
+    }
+}

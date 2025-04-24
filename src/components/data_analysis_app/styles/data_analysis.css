@@ -1,0 +1,5 @@
+.convert-data-container .dropdown-item.active,
+.convert-data-container .dropdown-item:active {
+    color: inherit;
+    background: inherit;
+}

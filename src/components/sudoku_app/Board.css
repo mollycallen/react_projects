@@ -1,0 +1,87 @@
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Settings bar */
+.settings-bar {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.difficulty-selector select {
+    min-width: 120px;
+}
+
+/* Board styling */
+.sudoku-board {
+    border: 2px solid #2c3e50;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.board-row td {
+    border: 1px solid #bdc3c7;
+    padding: 0;
+}
+
+/* Add borders for 3x3 grid sections */
+.board-row td:nth-child(3n) {
+    border-right: 2px solid #2c3e50;
+}
+
+.board-row:nth-child(3n) td {
+    border-bottom: 2px solid #2c3e50;
+}
+
+/* Cell styling */
+.cell-container {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: white;
+    transition: background-color 0.2s ease;
+}
+
+@media (max-width: 500px) {
+    .cell-container {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.cell-container.invalid-cell {
+    background-color: #ffebee;
+}
+
+/* Loading spinner */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Improve button hover states */
+.btn {
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.btn-primary:hover,
+.btn-outline-secondary:hover {
+
+    transform: scale(1.1)
+}
+
+/* Form controls */
+.form-select-sm {
+    padding-right: 2rem;
+}
+
+.form-switch .form-check-input {
+    cursor: pointer;
+}
+
+.form-check-label {
+    cursor: pointer;
+    user-select: none;
+}
